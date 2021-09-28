@@ -45,7 +45,7 @@ abstract class Figure
         $image = imagecreate(Image::getImageWidth(), Image::getImageHeight());
         $white = Color::getWhiteColor($image);
         $color = Color::getColorFromCode($image, $colorCode);
-        imagesetthickness($image, 8);
+        imagesetthickness($image, 7);
         return ['image' => $image, 'color' => $color];
     }
 

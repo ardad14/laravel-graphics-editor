@@ -40,14 +40,25 @@
 
                                 <!--Form with figure params-->
                                 <div class="dropdown-menu" aria-labelledby="dropdownDotForm">
-                                    <form class="px-4 py-3">
+                                    <form class="px-4 py-3" action="/dot">
                                         <div class="form-group">
-                                            <label for="dotXCoord">X координата</label>
-                                            <input type="number" class="form-control" id="dotXCoord" placeholder="X">
+                                            <label for="pointXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="pointXCoord" name="pointXCoord" placeholder="X">
                                         </div>
                                         <div class="form-group">
-                                            <label for="dotYCoord">Y координата</label>
-                                            <input type="password" class="form-control" id="dotYCoord" placeholder="Y">
+                                            <label for="pointYCoord">Y координата</label>
+                                            <input type="number" class="form-control" id="pointYCoord" name="pointYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pointColor">Y координата</label>
+                                            <select class="form-select" aria-label="pointColor" name="pointColor">
+                                                <option value="1" selected>Чёрный</option>
+                                                <option value="2">Белый</option>
+                                                <option value="3">Красный</option>
+                                                <option value="4">Зеленый</option>
+                                                <option value="5">Синий</option>
+                                                <option value="6">Желтый</option>
+                                            </select>
                                         </div>
                                         <button class="btn btn-primary" type="submit">Нарисовать</button>
                                     </form>

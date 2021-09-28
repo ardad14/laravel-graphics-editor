@@ -4,8 +4,7 @@ namespace App\Models;
 
 class Point extends Figure
 {
-    private const CANVAS_WIDTH = 1080;
-    private const CANVAS_HEIGHT = 720;
+
     /**
      * @param $x
      * @param $y
@@ -16,20 +15,15 @@ class Point extends Figure
         $this->setY($y);
     }
 
-    public function draw(int $colorCode): void
+    public function draw(int $colorCode): array
     {
-        $image = imagecreate(self::CANVAS_WIDTH, self::CANVAS_HEIGHT);
-        $white = Color::getWhiteColor($image);
-        $color = Color::getColorFromCode($image, $colorCode);
-
-        imagesetthickness($image, 7);
+        $parentResult = parent::draw($colorCode);
+        $image = $parentResult['image'];
+        $color = $parentResult['color'];
         ImageRectAngle( $image, $this->getX(), $this->getY(), $this->getX()+2, $this->getY()+2, $color );
-        header('Content-type: image/png' );
 
         header('Content-type: image/png' );
         ImagePng( $image );
-
+        return array();
     }
-
-
 }

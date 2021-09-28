@@ -20,6 +20,12 @@ Route::get('/', function () {
 
 Route::match(
     ['get', 'post'],
-    '/dot',
-    [FigureController::class, 'dot']
-)->name('dot');
+    '/point',
+    [FigureController::class, 'point']
+)->name('point');
+
+Route::match(
+    ['get', 'post'],
+    '/section',
+    [FigureController::class, 'section']
+)->name('section');

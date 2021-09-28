@@ -120,8 +120,49 @@
                                     </form>
                                 </div>
 
-                                <a class="dropdown-item" href="1">Квадрат</a>
-                                <a class="dropdown-item" href="2">Пряоугольник</a>
+                                <!--Geometry figure-->
+                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownSquareForm" aria-haspopup="true" aria-expanded="false" href="#">
+                                    Квадрат
+                                </a>
+                                <!--Form with figure params-->
+                                <div class="dropdown-menu" aria-labelledby="dropdownSquareForm">
+                                    <form class="px-4 py-3" action="/square">
+                                        <div class="form-group">
+                                            <h6>Левая верхняя точка</h6>
+                                            <label for="squareFirstXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="squareFirstXCoord" name="squareFirstXCoord" placeholder="X">
+
+                                            <label for="squareFirstYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="squareFirstYCoord" name="squareFirstYCoord" placeholder="Y">
+                                        </div>
+                                        <!--<div class="form-group mt-4">
+                                            <h6>Правая нижняя точка</h6>
+                                            <label for="squareSecondXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="squareSecondXCoord" name="squareSecondXCoord" placeholder="X">
+
+                                            <label for="squareSecondYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="squareSecondYCoord" name="squareSecondYCoord" placeholder="Y">
+                                        </div>-->
+                                        <div class="form-group mt-4">
+                                            <label for="squareLength"><h6>Длина ребра</h6></label>
+                                            <input type="number" class="form-control" id="squareLength" name="squareLength" placeholder="Длина">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="squareColor">Цвет</label>
+                                            <select class="form-select" aria-label="squareColor" name="squareColor">
+                                                <option value="1" selected>Чёрный</option>
+                                                <option value="2">Белый</option>
+                                                <option value="3">Красный</option>
+                                                <option value="4">Зеленый</option>
+                                                <option value="5">Синий</option>
+                                                <option value="6">Желтый</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Нарисовать</button>
+                                    </form>
+                                </div>
+
+                                <a class="dropdown-item" href="#">Пряоугольник</a>
                                 <a class="dropdown-item" href="#">Параллелограмм</a>
                                 <a class="dropdown-item" href="#">Окружность</a>
                                 <a class="dropdown-item" href="#">Овал</a>

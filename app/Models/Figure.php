@@ -6,6 +6,8 @@ abstract class Figure
 {
     private $x;
     private $y;
+    protected const CANVAS_WIDTH = 1080;
+    protected const CANVAS_HEIGHT = 720;
 
     /**
      * @return mixed
@@ -40,9 +42,13 @@ abstract class Figure
     }
 
 
-    protected function draw(int $colorCode): void
+    protected function draw(int $colorCode): array
     {
-
+        $image = imagecreate(self::CANVAS_WIDTH, self::CANVAS_HEIGHT);
+        $white = Color::getWhiteColor($image);
+        $color = Color::getColorFromCode($image, $colorCode);
+        imagesetthickness($image, 8);
+        return ['image' => $image, 'color' => $color];
     }
 
 }

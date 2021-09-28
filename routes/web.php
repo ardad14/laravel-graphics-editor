@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('main');
 });
 
+/*Route::get(
+    '/figure',
+    [FigureController::class, 'figure']
+)->name('figure');*/
+
 Route::match(
     ['get', 'post'],
     '/point',
@@ -29,3 +34,9 @@ Route::match(
     '/section',
     [FigureController::class, 'section']
 )->name('section');
+
+Route::match(
+    ['get', 'post'],
+    '/square',
+    [FigureController::class, 'square']
+)->name('square');

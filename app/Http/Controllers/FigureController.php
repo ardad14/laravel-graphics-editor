@@ -6,6 +6,9 @@ use App\Http\Requests\PointRequest;
 use App\Models\Point;
 use App\Http\Requests\SectionRequest;
 use App\Models\Section;
+use App\Http\Requests\SquareRequest;
+use App\Models\Square;
+use Illuminate\Http\Request;
 
 
 class FigureController extends Controller
@@ -26,4 +29,27 @@ class FigureController extends Controller
         );
         $section->draw($request->sectionColor);
     }
+
+    public function square(SquareRequest $request)
+    {
+        $square = new Square(
+            $request->squareFirstXCoord,
+            $request->squareFirstYCoord,
+            $request->squareLength
+        );
+        $square->draw($request->squareColor);
+    }
+
+    /*public function figure(PointRequest $request)
+    {
+        $figureType = preg_split('/(?<=[a-z])(?=[A-Z])/u',array_key_first($_GET));
+        var_dump("point");
+        switch ($figureType) {
+            case 'point':
+
+                $this->point($request);
+                break;
+
+        }
+    }*/
 }

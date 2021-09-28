@@ -4,7 +4,6 @@ namespace App\Models;
 
 class Point extends Figure
 {
-
     /**
      * @param $x
      * @param $y

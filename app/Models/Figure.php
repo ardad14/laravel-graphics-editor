@@ -40,9 +40,9 @@ abstract class Figure
     }
 
 
-    protected function draw(): void
+    protected function draw(int $colorCode): void
     {
-        //TODO: Write basic draw method
+
     }
 
 }

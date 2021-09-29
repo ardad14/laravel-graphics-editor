@@ -40,7 +40,7 @@ abstract class Figure
     }
 
 
-    protected function draw(int $colorCode, array $points): array
+    protected function draw(int $colorCode): array
     {
         $image = imagecreate(Image::getImageWidth(), Image::getImageHeight());
         $white = Color::getWhiteColor($image);

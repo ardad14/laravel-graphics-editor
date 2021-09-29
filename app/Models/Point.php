@@ -24,6 +24,6 @@ class Point extends Figure
 
         header('Content-type: image/png');
         ImagePng($image);
-        return array();
+        return ['image' => $image, 'color' => $color];
     }
 }

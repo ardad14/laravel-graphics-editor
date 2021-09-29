@@ -18,31 +18,9 @@ Route::get('/', function () {
     return view('main');
 });
 
-/*Route::get(
-    '/figure',
-    [FigureController::class, 'figure']
-)->name('figure');*/
-
 Route::match(
     ['get', 'post'],
-    '/point',
-    [FigureController::class, 'point']
-)->name('point');
+    '/draw',
+    [FigureController::class, 'draw']
+)->name('draw');
 
-Route::match(
-    ['get', 'post'],
-    '/section',
-    [FigureController::class, 'section']
-)->name('section');
-
-Route::match(
-    ['get', 'post'],
-    '/square',
-    [FigureController::class, 'square']
-)->name('square');
-
-Route::match(
-    ['get', 'post'],
-    '/rectangle',
-    [FigureController::class, 'rectangle']
-)->name('rectangle');

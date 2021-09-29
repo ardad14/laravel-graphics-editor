@@ -42,6 +42,15 @@ class ImageService
                 );
                 $rectangle->draw($requset["rectangleColor"]);
                 break;
+
+            case "circle":
+                $circle = FigureFactory::makeCircle(
+                    $requset['circleXCoord'],
+                    $requset['circleYCoord'],
+                    $requset['circleRadius'],
+                );
+                $circle->draw($requset["circleColor"]);
+                break;
         }
     }
 }

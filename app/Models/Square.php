@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Square extends Figure
+class Square extends Rectangle
 {
     private int $length;
 
@@ -21,25 +21,12 @@ class Square extends Figure
     }
 
 
-    public function draw($colorCode): array
+    public function draw(int $colorCode, array $points): array
     {
-        $parentResult = parent::draw($colorCode);
-        $image = $parentResult['image'];
-        $color = $parentResult['color'];
+        $points[2] = $points[0] + sqrt(pow($this->length, 2) * 2);
+        $points[3] = $points[1] + sqrt(pow($this->length, 2) * 2);
+        $parentResult = parent::draw($colorCode, $points);
 
-        ImageRectAngle(
-            $image,
-            $this->getX(),
-            $this->getY(),
-            $this->getX() + sqrt(pow($this->length, 2) * 2 ),
-            $this->getY() + sqrt(pow($this->length, 2) * 2 ),
-            $color
-        );
-
-        header('Content-type: image/png' );
-        ImagePng( $image );
         return array();
     }
-
-
 }

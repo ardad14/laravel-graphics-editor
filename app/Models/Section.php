@@ -19,17 +19,15 @@ class Section extends Figure
         $this->secondPoint = new Point($x2, $y2);
     }
 
-    public function draw(int $colorCode): array
+    public function draw(int $colorCode, array $points): array
     {
-        $parentResult = parent::draw($colorCode);
+        $parentResult = parent::draw($colorCode, array());
         $image = $parentResult['image'];
         $color = $parentResult['color'];
-        imageline($image, $this->getX(), $this->getY(), $this->secondPoint->getX(), $this->secondPoint->getY(), $color );
+        imageline($image, $points[0], $points[1], $points[2], $points[3], $color);
 
-        header('Content-type: image/png' );
-        ImagePng( $image );
+        header('Content-type: image/png');
+        ImagePng($image);
         return array();
     }
-
-
 }

@@ -40,3 +40,9 @@ Route::match(
     '/square',
     [FigureController::class, 'square']
 )->name('square');
+
+Route::match(
+    ['get', 'post'],
+    '/rectangle',
+    [FigureController::class, 'rectangle']
+)->name('rectangle');

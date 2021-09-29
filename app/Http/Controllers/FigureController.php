@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PointRequest;
+use App\Http\Requests\RectangleRequest;
 use App\Models\Point;
 use App\Http\Requests\SectionRequest;
+use App\Models\Rectangle;
 use App\Models\Section;
 use App\Http\Requests\SquareRequest;
 use App\Models\Square;
 use Illuminate\Http\Request;
 
-
 class FigureController extends Controller
 {
     public function point(PointRequest $request)
     {
-         $point = new Point($request->pointXCoord, $request->pointYCoord);
-         $point->draw($request->pointColor);
+        $point = new Point($request->pointXCoord, $request->pointYCoord);
+        $point->draw($request->pointColor);
     }
 
     public function section(SectionRequest $request)
@@ -27,7 +28,15 @@ class FigureController extends Controller
             $request->sectionSecondXCoord,
             $request->sectionSecondYCoord
         );
-        $section->draw($request->sectionColor);
+        $section->draw(
+            $request->sectionColor,
+            [
+                $request->sectionFirstXCoord,
+                $request->sectionFirstYCoord,
+                $request->sectionSecondXCoord,
+                $request->sectionSecondYCoord
+            ]
+        );
     }
 
     public function square(SquareRequest $request)
@@ -37,7 +46,32 @@ class FigureController extends Controller
             $request->squareFirstYCoord,
             $request->squareLength
         );
-        $square->draw($request->squareColor);
+        $square->draw(
+            $request->squareColor,
+            [
+                $request->squareFirstXCoord,
+                $request->squareFirstYCoord,
+            ]
+        );
+    }
+
+    public function rectangle(RectangleRequest $request)
+    {
+        $rectangle= new Rectangle(
+            $request->rectangleFirstXCoord,
+            $request->rectangleFirstYCoord,
+            $request->rectangleSecondXCoord,
+            $request->rectangleSecondYCoord,
+        );
+        $rectangle->draw(
+            $request->rectangleColor,
+            [
+                $request->rectangleFirstXCoord,
+                $request->rectangleFirstYCoord,
+                $request->rectangleSecondXCoord,
+                $request->rectangleSecondYCoord
+            ]
+        );
     }
 
     /*public function figure(PointRequest $request)

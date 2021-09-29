@@ -14,15 +14,16 @@ class Point extends Figure
         $this->setY($y);
     }
 
-    public function draw(int $colorCode): array
+    public function draw(int $colorCode, array $points = []): array
     {
-        $parentResult = parent::draw($colorCode);
+        $parentResult = parent::draw($colorCode, $points);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
-        ImageRectAngle( $image, $this->getX(), $this->getY(), $this->getX()+2, $this->getY()+2, $color );
 
-        header('Content-type: image/png' );
-        ImagePng( $image );
+        ImageRectAngle($image, $this->getX(), $this->getY(), $this->getX()+2, $this->getY()+2, $color);
+
+        header('Content-type: image/png');
+        ImagePng($image);
         return array();
     }
 }

@@ -58,9 +58,10 @@
                                 </a>
                                 <!--Form with figure params-->
                                 <div class="dropdown-menu" aria-labelledby="dropdownDotForm">
-                                    <form class="px-4 py-3" action="/point">
+                                    <form class="px-4 py-3" method="get" action="/draw">
                                         <div class="form-group">
                                             <label for="pointXCoord">X координата</label>
+                                            <input type="hidden" name="type" value="point">
                                             <input type="number" class="form-control" id="pointXCoord" name="pointXCoord" placeholder="X">
                                         </div>
                                         <div class="form-group">
@@ -88,9 +89,10 @@
                                 </a>
                                 <!--Form with figure params-->
                                 <div class="dropdown-menu" aria-labelledby="dropdownSectionForm">
-                                    <form class="px-4 py-3" action="/section">
+                                    <form class="px-4 py-3" method="get" action="/draw">
                                         <div class="form-group">
                                             <h6>Первая точка</h6>
+                                            <input type="hidden" name="type" value="section">
                                             <label for="sectionFirstXCoord">X координата</label>
                                             <input type="number" class="form-control" id="sectionFirstXCoord" name="sectionFirstXCoord" placeholder="X">
 
@@ -126,9 +128,10 @@
                                 </a>
                                 <!--Form with figure params-->
                                 <div class="dropdown-menu" aria-labelledby="dropdownSquareForm">
-                                    <form class="px-4 py-3" action="/square">
+                                    <form class="px-4 py-3" method="get" action="/draw">
                                         <div class="form-group">
                                             <h6>Левая верхняя точка</h6>
+                                            <input type="hidden" name="type" value="square">
                                             <label for="squareFirstXCoord">X координата</label>
                                             <input type="number" class="form-control" id="squareFirstXCoord" name="squareFirstXCoord" placeholder="X">
 
@@ -160,9 +163,10 @@
                                 </a>
                                 <!--Form with figure params-->
                                 <div class="dropdown-menu" aria-labelledby="dropdownRectangleForm">
-                                    <form class="px-4 py-3" action="/rectangle">
+                                    <form class="px-4 py-3" method="get" action="/draw">
                                         <div class="form-group">
                                             <h6>Левая верхняя точка</h6>
+                                            <input type="hidden" name="type" value="rectangle">
                                             <label for="rectangleFirstXCoord">X координата</label>
                                             <input type="number" class="form-control" id="rectangleFirstXCoord" name="rectangleFirstXCoord" placeholder="X">
 

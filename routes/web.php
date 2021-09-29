@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FigureController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,31 +18,9 @@ Route::get('/', function () {
     return view('main');
 });
 
-/*Route::get(
-    '/figure',
-    [FigureController::class, 'figure']
-)->name('figure');*/
-
 Route::match(
     ['get', 'post'],
-    '/point',
-    [FigureController::class, 'point']
-)->name('point');
+    '/draw',
+    [ImageController::class, 'draw']
+)->name('draw');
 
-Route::match(
-    ['get', 'post'],
-    '/section',
-    [FigureController::class, 'section']
-)->name('section');
-
-Route::match(
-    ['get', 'post'],
-    '/square',
-    [FigureController::class, 'square']
-)->name('square');
-
-Route::match(
-    ['get', 'post'],
-    '/rectangle',
-    [FigureController::class, 'rectangle']
-)->name('rectangle');

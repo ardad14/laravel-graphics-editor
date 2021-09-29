@@ -197,7 +197,42 @@
                                 </div>
 
                                 <a class="dropdown-item" href="#">Параллелограмм</a>
-                                <a class="dropdown-item" href="#">Окружность</a>
+
+                                <!--Geometry figure-->
+                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownRectangleForm" aria-haspopup="true" aria-expanded="false" href="#">
+                                    Окружность
+                                </a>
+                                <!--Form with figure params-->
+                                <div class="dropdown-menu" aria-labelledby="dropdownRectangleForm">
+                                    <form class="px-4 py-3" method="get" action="/draw">
+                                        <div class="form-group">
+                                            <h6>Центр окружности</h6>
+                                            <input type="hidden" name="type" value="circle">
+                                            <label for="circleXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="circleXCoord" name="circleXCoord" placeholder="X">
+
+                                            <label for="circleYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="circleYCoord" name="circleYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group mt-4">
+                                            <label for="circleRadius"><h6>Радиус</h6></label>
+                                            <input type="number" class="form-control" id="circleRadius" name="circleRadius" placeholder="X">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="circleColor">Цвет</label>
+                                            <select class="form-select" aria-label="circleColor" name="circleColor">
+                                                <option value="1" selected>Чёрный</option>
+                                                <option value="2">Белый</option>
+                                                <option value="3">Красный</option>
+                                                <option value="4">Зеленый</option>
+                                                <option value="5">Синий</option>
+                                                <option value="6">Желтый</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Нарисовать</button>
+                                    </form>
+                                </div>
                                 <a class="dropdown-item" href="#">Овал</a>
                                 <a class="dropdown-item" href="#">Треугольник</a>
                                 <a class="dropdown-item" href="#">Текст</a>

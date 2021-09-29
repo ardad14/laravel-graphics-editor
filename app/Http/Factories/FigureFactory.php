@@ -2,6 +2,7 @@
 
 namespace App\Http\Factories;
 
+use App\Models\Circle;
 use App\Models\Point;
 use App\Models\Rectangle;
 use App\Models\Section;
@@ -27,5 +28,10 @@ class FigureFactory
     public static function makeRectangle($x1, $y1, $x2, $y2): Rectangle
     {
         return new Rectangle($x1, $y1, $x2, $y2);
+    }
+
+    public static function makeCircle($x1, $y1, $radius): Circle
+    {
+        return new Circle($x1, $y1, $radius);
     }
 }

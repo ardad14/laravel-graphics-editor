@@ -14,9 +14,9 @@ class Point extends Figure
         $this->setY($y);
     }
 
-    public function draw(int $colorCode, array $points = []): array
+    public function draw(int $colorCode): array
     {
-        $parentResult = parent::draw($colorCode, $points);
+        $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
 

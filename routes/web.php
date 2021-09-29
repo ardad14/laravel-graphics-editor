@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FigureController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +21,6 @@ Route::get('/', function () {
 Route::match(
     ['get', 'post'],
     '/draw',
-    [FigureController::class, 'draw']
+    [ImageController::class, 'draw']
 )->name('draw');
 

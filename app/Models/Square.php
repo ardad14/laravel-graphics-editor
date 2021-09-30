@@ -22,7 +22,7 @@ class Square extends Rectangle
 
     public function draw(int $colorCode): array
     {
-        $parentResult = parent::draw($colorCode);
+        parent::draw($colorCode);
         return array();
     }
 }

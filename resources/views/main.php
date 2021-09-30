@@ -52,7 +52,6 @@
                             <!--Main dropdown menu 'Draw'-->
                             <div class="dropdown-menu dropdown dropright" aria-labelledby="dropdownDraw">
                                 <!--Geometry figure-->
-
                                 <a class="dropdown-item submenu"  role="button" data-toggle="dropdown" id="dropdownDotForm" aria-haspopup="true" aria-expanded="false" href="#">
                                     Точка
                                 </a>
@@ -83,7 +82,7 @@
                                     </form>
                                 </div>
 
-                                    <!--Geometry figure-->
+                                <!--Geometry figure-->
                                 <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownSectionForm" aria-haspopup="true" aria-expanded="false" href="#">
                                     Отрезок
                                 </a>
@@ -196,14 +195,59 @@
                                     </form>
                                 </div>
 
-                                <a class="dropdown-item" href="#">Параллелограмм</a>
+                                <!--Geometry figure-->
+                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownParallelogramForm" aria-haspopup="true" aria-expanded="false" href="#">
+                                    Параллелограмм
+                                </a>
+                                <!--Form with figure params-->
+                                <div class="dropdown-menu" aria-labelledby="dropdownParallelogramForm">
+                                    <form class="px-4 py-3" method="get" action="/draw">
+                                        <div class="form-group">
+                                            <h6>Первая точка</h6>
+                                            <input type="hidden" name="type" value="parallelogram">
+                                            <label for="parallelogramFirstXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="parallelogramFirstXCoord" name="parallelogramFirstXCoord" placeholder="X">
+
+                                            <label for="parallelogramFirstYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="parallelogramFirstYCoord" name="parallelogramFirstYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <h6>Вторая точка</h6>
+                                            <label for="parallelogramSecondXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="parallelogramSecondXCoord" name="parallelogramSecondXCoord" placeholder="X">
+
+                                            <label for="parallelogramSecondYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="parallelogramSecondYCoord" name="parallelogramSecondYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <h6>Третья точка</h6>
+                                            <label for="parallelogramThirdXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="parallelogramThirdXCoord" name="parallelogramThirdXCoord" placeholder="X">
+
+                                            <label for="parallelogramThirdYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="parallelogramThirdYCoord" name="parallelogramThirdYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="parallelogramColor">Цвет</label>
+                                            <select class="form-select" aria-label="parallelogramColor" name="parallelogramColor">
+                                                <option value="1" selected>Чёрный</option>
+                                                <option value="2">Белый</option>
+                                                <option value="3">Красный</option>
+                                                <option value="4">Зеленый</option>
+                                                <option value="5">Синий</option>
+                                                <option value="6">Желтый</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Нарисовать</button>
+                                    </form>
+                                </div>
 
                                 <!--Geometry figure-->
-                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownRectangleForm" aria-haspopup="true" aria-expanded="false" href="#">
+                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownCircleForm" aria-haspopup="true" aria-expanded="false" href="#">
                                     Окружность
                                 </a>
                                 <!--Form with figure params-->
-                                <div class="dropdown-menu" aria-labelledby="dropdownRectangleForm">
+                                <div class="dropdown-menu" aria-labelledby="dropdownCircleForm">
                                     <form class="px-4 py-3" method="get" action="/draw">
                                         <div class="form-group">
                                             <h6>Центр окружности</h6>
@@ -216,7 +260,7 @@
                                         </div>
                                         <div class="form-group mt-4">
                                             <label for="circleRadius"><h6>Радиус</h6></label>
-                                            <input type="number" class="form-control" id="circleRadius" name="circleRadius" placeholder="X">
+                                            <input type="number" class="form-control" id="circleRadius" name="circleRadius" placeholder="Радиус">
 
                                         </div>
                                         <div class="form-group">
@@ -233,27 +277,140 @@
                                         <button class="btn btn-primary" type="submit">Нарисовать</button>
                                     </form>
                                 </div>
-                                <a class="dropdown-item" href="#">Овал</a>
-                                <a class="dropdown-item" href="#">Треугольник</a>
-                                <a class="dropdown-item" href="#">Текст</a>
 
+                                <!--Geometry figure-->
+                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownEllipseForm" aria-haspopup="true" aria-expanded="false" href="#">
+                                    Эллипс
+                                </a>
+                                <!--Form with figure params-->
+                                <div class="dropdown-menu" aria-labelledby="dropdownEllipseForm">
+                                    <form class="px-4 py-3" method="get" action="/draw">
+                                        <div class="form-group">
+                                            <h6>Центр эллипса</h6>
+                                            <input type="hidden" name="type" value="ellipse">
+                                            <label for="ellipseXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="ellipseXCoord" name="ellipseXCoord" placeholder="X">
 
+                                            <label for="ellipseYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="ellipseYCoord" name="ellipseYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group mt-4">
+                                            <label for="ellipseLongRadius"><h6>Больший радиус</h6></label>
+                                            <input type="number" class="form-control" id="ellipseLongRadius" name="ellipseLongRadius" placeholder="Больший радиус">
+                                        </div>
+                                        <div class="form-group mt-4">
+                                            <label for="ellipseShortRadius"><h6>Меньший радиус</h6></label>
+                                            <input type="number" class="form-control" id="ellipseShortRadius" name="ellipseShortRadius" placeholder="Меньший радиус">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ellipseColor">Цвет</label>
+                                            <select class="form-select" aria-label="ellipseColor" name="ellipseColor">
+                                                <option value="1" selected>Чёрный</option>
+                                                <option value="2">Белый</option>
+                                                <option value="3">Красный</option>
+                                                <option value="4">Зеленый</option>
+                                                <option value="5">Синий</option>
+                                                <option value="6">Желтый</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Нарисовать</button>
+                                    </form>
+                                </div>
 
+                                <!--Geometry figure-->
+                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownTriangleForm" aria-haspopup="true" aria-expanded="false" href="#">
+                                    Треугольник
+                                </a>
+                                <!--Form with figure params-->
+                                <div class="dropdown-menu" aria-labelledby="dropdownTriangleForm">
+                                    <form class="px-4 py-3" method="get" action="/draw">
+                                        <div class="form-group">
+                                            <h6>Первая точка</h6>
+                                            <input type="hidden" name="type" value="triangle">
+                                            <label for="triangleFirstXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="triangleFirstXCoord" name="triangleFirstXCoord" placeholder="X">
+
+                                            <label for="triangleFirstYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="triangleFirstYCoord" name="triangleFirstYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <h6>Вторая точка</h6>
+                                            <label for="triangleSecondXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="triangleSecondXCoord" name="triangleSecondXCoord" placeholder="X">
+
+                                            <label for="triangleSecondYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="triangleSecondYCoord" name="triangleSecondYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <h6>Третья точка</h6>
+                                            <label for="triangleThirdXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="triangleThirdXCoord" name="triangleThirdXCoord" placeholder="X">
+
+                                            <label for="triangleThirdYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="triangleThirdYCoord" name="triangleThirdYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="triangleColor">Цвет</label>
+                                            <select class="form-select" aria-label="triangleColor" name="triangleColor">
+                                                <option value="1" selected>Чёрный</option>
+                                                <option value="2">Белый</option>
+                                                <option value="3">Красный</option>
+                                                <option value="4">Зеленый</option>
+                                                <option value="5">Синий</option>
+                                                <option value="6">Желтый</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Нарисовать</button>
+                                    </form>
+                                </div>
+
+                                <!--Geometry figure-->
+                                <a class="dropdown-item submenu" role="button" data-toggle="dropdown" id="dropdownTextForm" aria-haspopup="true" aria-expanded="false" href="#">
+                                    Текст
+                                </a>
+                                <!--Form with figure params-->
+                                <div class="dropdown-menu" aria-labelledby="dropdownTextForm">
+                                    <form class="px-4 py-3" method="get" action="/draw">
+                                        <div class="form-group">
+                                            <input type="hidden" name="type" value="text">
+                                            <label for="textString"><h6>Текст</h6></label>
+                                            <input type="text" class="form-control" id="textString" name="textString" placeholder="X">
+                                        </div>
+                                        <div class="form-group">
+                                            <h6>Точка для начала</h6>
+                                            <label for="textXCoord">X координата</label>
+                                            <input type="number" class="form-control" id="textXCoord" name="textXCoord" placeholder="X">
+
+                                            <label for="textYCoord" class="mt-2">Y координата</label>
+                                            <input type="number" class="form-control" id="textYCoord" name="textYCoord" placeholder="Y">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="textSize">Размер шрифта</label>
+                                            <input type="number" class="form-control" id="textSize" name="textSize" placeholder="18">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="textColor">Цвет</label>
+                                            <select class="form-select" aria-label="textColor" name="textColor">
+                                                <option value="1" selected>Чёрный</option>
+                                                <option value="2">Белый</option>
+                                                <option value="3">Красный</option>
+                                                <option value="4">Зеленый</option>
+                                                <option value="5">Синий</option>
+                                                <option value="6">Желтый</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Нарисовать</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </li>
-
-
-
-
                     <!--Other features
                     <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">About</a></li>-->
-
                 </ul>
-
                 <div class="col-md-3 text-end">
                     <button type="button" class="btn btn-outline-primary me-2">Login</button>
                     <button type="button" class="btn btn-primary">Sign-up</button>

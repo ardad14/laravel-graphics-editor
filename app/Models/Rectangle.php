@@ -14,7 +14,7 @@ class Rectangle extends Figure
 
     public function draw(int $colorCode): array
     {
-        $parentResult = parent::draw($colorCode, array());
+        $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
 

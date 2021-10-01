@@ -24,3 +24,15 @@ Route::match(
     [ImageController::class, 'draw']
 )->name('draw');
 
+Route::match(
+    ['get', 'post'],
+    '/getFigure',
+    [ImageController::class, 'getFigure']
+)->name('getFigure');
+
+Route::match(
+    ['get', 'post'],
+    '/clearCanvas',
+    [ImageController::class, 'clearCanvas']
+)->name('clearCanvas');
+

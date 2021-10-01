@@ -11,7 +11,7 @@ class Image extends Model
 
     private static $imageFormat = "png";
     private static $imageWidth = 1080;
-    private static $imageHeight = 720;
+    private static $imageHeight = 850;
     private array $imageFigures;
 
     public function __construct()
@@ -77,14 +77,21 @@ class Image extends Model
     }
 
     /**
-     * @param array $imageFigures
+     * @param string $imageFigures
      */
-    public function setImageFigures(array $imageFigures): void
+    public function setImageFigures(string $imageFigures): void
     {
-        $this->imageFigures = $imageFigures;
+        $this->imageFigures[] = $imageFigures;
     }
 
+    public function saveImage(): void
+    {
+        switch (self::getImageFormat()) {
+            case "png":
+                break;
 
-
-
+            case "jpeg":
+                break;
+        }
+    }
 }

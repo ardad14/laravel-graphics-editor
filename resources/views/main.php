@@ -16,7 +16,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <link rel="stylesheet" href="resources/css/app.css">
-        <style>
+            <style>
             .dropdown-menu .dropdown-menu {
                 top: auto;
                 left: 100%;
@@ -405,9 +405,9 @@
                             </div>
                         </div>
                     </li>
-                    <!--Other features
-                    <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+
+                    <li><a href="/clearCanvas" class="nav-link px-2 link-dark">Очистить</a></li>
+                    <!--<li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">About</a></li>-->
                 </ul>
@@ -419,6 +419,10 @@
         </div>
     </header>
     <body>
+        <div id="imageCanvas" class="h-100 w-100 position-fixed">
 
+        </div>
+        <script src="js/loadFigures.js"></script>
     </body>
+
 </html>

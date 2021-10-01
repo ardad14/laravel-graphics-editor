@@ -21,17 +21,17 @@ abstract class Color
     {
         switch ($code) {
             case 1:
-                return ImageColorAllocate($image, 0,0,0);
+                return ImageColorAllocate($image, 0, 0, 0);
             case 2:
-                return ImageColorAllocate($image, 255,255,255);
+                return ImageColorAllocate($image, 255, 255, 255);
             case 3:
-                return ImageColorAllocate($image, 255,0,0);
+                return ImageColorAllocate($image, 255, 0, 0);
             case 4:
-                return ImageColorAllocate($image, 0,255,0);
+                return ImageColorAllocate($image, 0, 255, 0);
             case 5:
-                return ImageColorAllocate($image, 0,0,255);
+                return ImageColorAllocate($image, 0, 0, 255);
             case 6:
-                return ImageColorAllocate($image, 255,255,0);
+                return ImageColorAllocate($image, 255, 255, 0);
         }
     }
 
@@ -42,7 +42,7 @@ abstract class Color
      */
     public static function getBlackColor($image)
     {
-        return ImageColorAllocate($image, 0,0,0);
+        return ImageColorAllocate($image, 0, 0, 0);
     }
 
     /**
@@ -52,7 +52,7 @@ abstract class Color
      */
     public static function getWhiteColor($image)
     {
-        return ImageColorAllocate($image, 255,255,255);
+        return ImageColorAllocate($image, 255, 255, 255);
     }
 
     /**
@@ -62,7 +62,7 @@ abstract class Color
      */
     public static function getRedColor($image)
     {
-        return ImageColorAllocate($image, 255,0,0);
+        return ImageColorAllocate($image, 255, 0, 0);
     }
 
     /**
@@ -72,7 +72,7 @@ abstract class Color
      */
     public static function getGreenColor($image)
     {
-        return ImageColorAllocate($image, 0,255,0);
+        return ImageColorAllocate($image, 0, 255, 0);
     }
 
     /**
@@ -82,7 +82,7 @@ abstract class Color
      */
     public static function getBlueColor($image)
     {
-        return ImageColorAllocate($image, 0,0,255);
+        return ImageColorAllocate($image, 0, 0, 255);
     }
 
     /**
@@ -92,6 +92,6 @@ abstract class Color
      */
     public static function getYellowColor($image)
     {
-        return ImageColorAllocate($image, 255,255,0);
+        return ImageColorAllocate($image, 255, 255, 0);
     }
 }

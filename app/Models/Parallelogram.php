@@ -28,7 +28,9 @@ class Parallelogram extends Figure
         $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
+        $index = $parentResult['index'];
 
+        //Built fourth point using other three points
         $minY = min($this->firstPoint->getY(), $this->secondPoint->getY(), $this->thirdPoint->getY());
         $x4 = 0;
         $y4 = 0;
@@ -49,6 +51,8 @@ class Parallelogram extends Figure
                 $y4 = $this->thirdPoint->getY() + abs($this->firstPoint->getY() - $this->secondPoint->getY());
                 break;
         }
+
+        //Draw parallelogram with two triangles
         imageopenpolygon(
             $image,
             [
@@ -77,8 +81,11 @@ class Parallelogram extends Figure
             $color
         );
 
-        header('Content-type: image/png');
-        ImagePng($image);
+        imagepng($image, '/var/www/public/figures/image.png');
+
+        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        session()->push('figure', 'parallelogram' . $index);
+        header("location: /");
         return array();
     }
 }

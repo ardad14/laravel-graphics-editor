@@ -42,9 +42,9 @@ class Triangle extends Figure
             ],
             $color
         );
-        imagepng($image, '/var/www/public/figures/image.png');
+        imagepng($image, '/var/www/public/figures/temp_image.png');
 
-        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        chmod('/var/www/public/figures/temp_image.png', octdec("0777"));
         session()->push('figure', 'triangle' . $index);
         header("location: /");
         return array();

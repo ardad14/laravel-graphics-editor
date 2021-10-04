@@ -29,8 +29,17 @@ class FileService
 
     public static function clearCanvas(): void
     {
-        unlink('/var/www/public/figures/image.png');
+        unlink('/var/www/public/figures/temp_image.png');
         session()->pull('figure');
         header("Location: /");
+    }
+
+    public static function saveImage($request): void
+    {
+        $file = '/var/www/public/figures/temp_image.png';
+        header('Content-Type: image/png');
+        header('Content-Disposition: attachment; filename="' . $request['fileName'] . '.png"');
+        readfile($file);
+        session()->put($request['username'], $request["fileName"]);
     }
 }

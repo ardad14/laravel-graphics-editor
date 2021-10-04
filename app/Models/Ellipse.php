@@ -23,9 +23,9 @@ class Ellipse extends Figure
         $index = $parentResult['index'];
 
         imageellipse($image, $this->getX(), $this->getY(), $this->longDiameter, $this->shortDiameter, $color);
-        imagepng($image, '/var/www/public/figures/image.png');
+        imagepng($image, '/var/www/public/figures/temp_image.png');
 
-        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        chmod('/var/www/public/figures/temp_image.png', octdec("0777"));
         session()->push('figure', 'circle' . $index);
         header("location: /");
         return array();

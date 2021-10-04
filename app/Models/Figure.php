@@ -45,9 +45,18 @@ abstract class Figure
         $image = imagecreate(Image::getImageWidth(), Image::getImageHeight());
         $white = Color::getWhiteColor($image);
 
+        if (file_exists('/var/www/public/figures/image.png')) {
+            $image = imagecreatefrompng('/var/www/public/figures/image.png');
+        }
+
+        if (session()->get('figure') === null) {
+            $index = 0;
+        } else {
+            $index = count(session()->get('figure'));
+        }
+
         $color = Color::getColorFromCode($image, $colorCode);
         imagesetthickness($image, 8);
-        return ['image' => $image, 'color' => $color];
+        return ['image' => $image, 'color' => $color, 'index' => $index];
     }
-
 }

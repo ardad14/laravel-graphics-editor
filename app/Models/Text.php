@@ -9,9 +9,10 @@ class Text extends Figure
     private Point $point;
 
     /**
-     * @param $fontSize
-     * @param Point $point
+     * @param $x
+     * @param $y
      * @param $text
+     * @param $fontSize
      */
     public function __construct($x, $y, $text, $fontSize)
     {
@@ -25,14 +26,16 @@ class Text extends Figure
         $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
+        $index = $parentResult['index'];
 
         $fontStyle = dirname(__FILE__) . '/Roboto-Regular.ttf';
 
         imagettftext($image, $this->fontSize, 0, $this->point->getX(), $this->point->getY(), $color, $fontStyle, $this->text);
+        imagepng($image, '/var/www/public/figures/image.png');
 
-
-        header('Content-type: image/png');
-        ImagePng($image);
+        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        session()->push('figure', 'text' . $index);
+        header("location: /");
         return array();
     }
 }

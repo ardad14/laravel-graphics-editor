@@ -19,18 +19,8 @@ class Ellipse extends Figure
     {
         $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
-
-        if (session()->get('figure') === null) {
-            $index = 0;
-        } else {
-            $index = count(session()->get('figure'));
-        }
-
-        if (file_exists('/var/www/public/figures/image.png')) {
-            $image = imagecreatefrompng('/var/www/public/figures/image.png');
-        }
-
-        $color = Color::getColorFromCode($image, $colorCode);
+        $color = $parentResult['color'];
+        $index = $parentResult['index'];
 
         imageellipse($image, $this->getX(), $this->getY(), $this->longDiameter, $this->shortDiameter, $color);
         imagepng($image, '/var/www/public/figures/image.png');

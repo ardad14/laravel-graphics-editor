@@ -17,11 +17,14 @@ class Rectangle extends Figure
         $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
+        $index = $parentResult['index'];
 
         ImageRectAngle($image, $this->getX(), $this->getY(), $this->rightBottom->getX(), $this->rightBottom->getY(), $color);
+        imagepng($image, '/var/www/public/figures/image.png');
 
-        header('Content-type: image/png');
-        ImagePng($image);
+        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        session()->push('figure', 'rectangle' . $index);
+        header("location: /");
         return array();
     }
 }

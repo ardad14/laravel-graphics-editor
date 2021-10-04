@@ -374,7 +374,7 @@
                                         <div class="form-group">
                                             <input type="hidden" name="type" value="text">
                                             <label for="textString"><h6>Текст</h6></label>
-                                            <input type="text" class="form-control" id="textString" name="textString" placeholder="X">
+                                            <input type="text" class="form-control" id="textString" name="textString" placeholder="Текст">
                                         </div>
                                         <div class="form-group">
                                             <h6>Точка для начала</h6>

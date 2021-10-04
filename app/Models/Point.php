@@ -19,11 +19,14 @@ class Point extends Figure
         $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
+        $index = $parentResult['index'];
 
         ImageRectAngle($image, $this->getX(), $this->getY(), $this->getX()+2, $this->getY()+2, $color);
+        imagepng($image, '/var/www/public/figures/image.png');
 
-        header('Content-type: image/png');
-        ImagePng($image);
+        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        session()->push('figure', 'point' . $index);
+        header("location: /");
         return ['image' => $image, 'color' => $color];
     }
 }

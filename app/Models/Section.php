@@ -24,11 +24,14 @@ class Section extends Figure
         $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
+        $index = $parentResult['index'];
 
         imageline($image, $this->getX(), $this->getY(), $this->secondPoint->getX(), $this->secondPoint->getY(), $color);
+        imagepng($image, '/var/www/public/figures/image.png');
 
-        header('Content-type: image/png');
-        ImagePng($image);
+        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        session()->push('figure', 'section' . $index);
+        header("location: /");
         return array();
     }
 }

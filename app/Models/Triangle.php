@@ -10,7 +10,7 @@ class Triangle extends Figure
 
     /**
      * @param int $x1
-     * @param int $x1
+     * @param int $y1
      * @param int $x2
      * @param int $y2
      * @param int $x3
@@ -28,6 +28,7 @@ class Triangle extends Figure
         $parentResult = parent::draw($colorCode);
         $image = $parentResult['image'];
         $color = $parentResult['color'];
+        $index = $parentResult['index'];
 
         imagepolygon(
             $image,
@@ -41,9 +42,11 @@ class Triangle extends Figure
             ],
             $color
         );
+        imagepng($image, '/var/www/public/figures/image.png');
 
-        header('Content-type: image/png');
-        ImagePng($image);
+        chmod('/var/www/public/figures/image.png', octdec("0777"));
+        session()->push('figure', 'triangle' . $index);
+        header("location: /");
         return array();
     }
 

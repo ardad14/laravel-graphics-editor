@@ -2,6 +2,8 @@
 
 namespace App\Http\Services;
 
+use Illuminate\Support\Facades\DB;
+
 class FileService
 {
     public static function sendFigure(): void
@@ -37,9 +39,18 @@ class FileService
     public static function saveImage($request): void
     {
         $file = '/var/www/public/figures/temp_image.png';
+        copy($file, '/var/www/storage/app/public/images/' . $request['fileName'] . '.png');
+        $file = '/var/www/storage/app/public/images/' . $request['fileName'] . '.png';
+        chmod($file, octdec('0777'));
         header('Content-Type: image/png');
         header('Content-Disposition: attachment; filename="' . $request['fileName'] . '.png"');
+
         readfile($file);
-        session()->put($request['username'], $request["fileName"]);
+
+        DB::table('images')->insert([
+            'fileName' => $request['fileName'],
+            'username' => $request['username'],
+            'image' => $file,
+        ]);
     }
 }

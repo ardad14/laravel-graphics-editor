@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,8 @@ Route::match(
     '/saveImage',
     [ImageController::class, 'saveImage']
 )->name('saveImage');
+
+Route::get('/savedImages', function () {
+    return view('savedImages', ['images' => DB::table('images')->latest()->get()]);
+});
 

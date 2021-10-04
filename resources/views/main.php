@@ -39,11 +39,7 @@
     <header>
         <div class="container">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-
-               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <ul class="nav col-12 col-md-12 mb-2 text-center justify-content-center mb-md-0">
                     <li>
                         <div class="dropdown show">
                             <a class="nav-link link-dark dropdown-toggle" href="#" role="button" id="dropdownDraw" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -407,14 +403,29 @@
                     </li>
 
                     <li><a href="/clearCanvas" class="nav-link px-2 link-dark">Очистить</a></li>
-                    <!--<li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+                    <li>
+                        <div class="dropdown show">
+                            <a class="nav-link link-dark dropdown-toggle" href="#" role="button" id="dropdownSave" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Сохранить
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownSave">
+                                <form class="px-4 py-3" action="/saveImage">
+                                    <div class="form-group">
+                                        <label for="username"><h6>Имя пользователя</h6></label>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Имя">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fileName"><h6>Имя файла</h6></label>
+                                        <input type="text" class="form-control" id="fileName" name="fileName" placeholder="Файл">
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Сохранить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">About</a></li>-->
                 </ul>
-                <div class="col-md-3 text-end">
-                    <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                    <button type="button" class="btn btn-primary">Sign-up</button>
-                </div>
             </header>
         </div>
     </header>

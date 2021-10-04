@@ -45,8 +45,8 @@ abstract class Figure
         $image = imagecreate(Image::getImageWidth(), Image::getImageHeight());
         $white = Color::getWhiteColor($image);
 
-        if (file_exists('/var/www/public/figures/image.png')) {
-            $image = imagecreatefrompng('/var/www/public/figures/image.png');
+        if (file_exists('/var/www/public/figures/temp_image.png')) {
+            $image = imagecreatefrompng('/var/www/public/figures/temp_image.png');
         }
 
         if (session()->get('figure') === null) {

@@ -36,3 +36,9 @@ Route::match(
     [ImageController::class, 'clearCanvas']
 )->name('clearCanvas');
 
+Route::match(
+    ['get', 'post'],
+    '/saveImage',
+    [ImageController::class, 'saveImage']
+)->name('saveImage');
+

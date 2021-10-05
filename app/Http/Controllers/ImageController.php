@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SaveImageRequest;
+use App\Http\Requests\SquareRequest;
 use App\Http\Services\FileService;
 use App\Http\Services\ImageService;
-use Faker\Core\File;
+use App\Http\Requests\FigureRequest;
 
 class ImageController extends Controller
 {
-    public function draw(): void
+    public function draw(FigureRequest $request): void
     {
-        ImageService::drawFigure($_REQUEST);
+        ImageService::drawFigure($request->all());
     }
 
     public function getFigure(): void

@@ -6,7 +6,7 @@ const getFigure = async () => {
     if (file.length === 0) {
         return;
     }
-    canvas.innerHTML = `<img src="figures/${ file }" />`;
+    canvas.innerHTML = `<img src="images/temp_image.png" />`;
 }
 
 getFigure();

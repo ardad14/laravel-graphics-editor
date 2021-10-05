@@ -3,7 +3,7 @@
 @section('content')
     @foreach($images as $image)
     <div class="mt-4">
-        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <a href="/userImage/{{$image->id}}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
             {{--<img src="{{$image->image}}" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">--}}
             <div class="d-flex gap-2 w-100 justify-content-between">
                 <div>

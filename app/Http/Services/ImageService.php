@@ -6,6 +6,10 @@ use App\Http\Factories\FigureFactory;
 
 class ImageService
 {
+    /**
+     * Get FigureRequest, make figure object and make it draws
+     * @param $request
+     */
     public static function drawFigure($request)
     {
         switch ($request['type']) {
@@ -96,5 +100,27 @@ class ImageService
                 $text->draw($request["textColor"]);
                 break;
         }
+    }
+
+    /**
+     * Set up in temp file temp_image.png image from path
+     * @param $imagePath
+     */
+    public static function createImageFromFile($imagePath): void
+    {
+        preg_match('/\.(.*)$/U', $imagePath, $matches);
+        switch ($matches[1]) {
+            case 'png':
+                $image = imagecreatefrompng($imagePath);
+                break;
+            case 'jpeg':
+                $image = imagecreatefromjpeg($imagePath);
+                break;
+        }
+
+        imagepng($image, '/var/www/public/images/temp_image.png');
+
+        chmod('/var/www/public/images/temp_image.png', octdec("0777"));
+        header("location: /");
     }
 }

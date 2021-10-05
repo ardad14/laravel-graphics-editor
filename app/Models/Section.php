@@ -27,9 +27,9 @@ class Section extends Figure
         $index = $parentResult['index'];
 
         imageline($image, $this->getX(), $this->getY(), $this->secondPoint->getX(), $this->secondPoint->getY(), $color);
-        imagepng($image, '/var/www/public/figures/temp_image.png');
+        imagepng($image, '/var/www/public/images/temp_image.png');
 
-        chmod('/var/www/public/figures/temp_image.png', octdec("0777"));
+        chmod('/var/www/public/images/temp_image.png', octdec("0777"));
         session()->push('figure', 'section' . $index);
         header("location: /");
         return array();

@@ -54,12 +54,22 @@ class FileService
      */
     public static function saveImage($request): void
     {
-        $file = '/var/www/public/images/temp_image.png';
-        copy($file, '/var/www/storage/app/public/images/' . $request['fileName'] . '.png');
-        $file = '/var/www/storage/app/public/images/' . $request['fileName'] . '.png';
+        $file = '/var/www/public/images/';
+        $image = imagecreatefrompng($file . 'temp_image.png');
+
+        switch ($request['imageExtension']) {
+            case 'png':
+                imagepng($image, '/var/www/storage/app/public/images/' . $request['fileName'] . '.png');
+            break;
+            case 'jpeg':
+                imagejpeg($image, '/var/www/storage/app/public/images/' . $request['fileName'] . '.jpeg');
+                break;
+        }
+
+        $file = '/var/www/storage/app/public/images/' . $request['fileName'] . '.' . $request['imageExtension'];
         chmod($file, octdec('0777'));
-        header('Content-Type: image/png');
-        header('Content-Disposition: attachment; filename="' . $request['fileName'] . '.png"');
+        header('Content-Type: image/' . $request['imageExtension']);
+        header('Content-Disposition: attachment; filename="' . $request['fileName'] . '.' . $request['imageExtension']);
 
         readfile($file);
 

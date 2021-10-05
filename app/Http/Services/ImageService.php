@@ -3,6 +3,8 @@
 namespace App\Http\Services;
 
 use App\Http\Factories\FigureFactory;
+use App\Http\Requests\CanvasUpdateRequest;
+use App\Models\Image;
 
 class ImageService
 {
@@ -122,5 +124,15 @@ class ImageService
 
         chmod('/var/www/public/images/temp_image.png', octdec("0777"));
         header("location: /");
+    }
+
+    /**
+     * Update canvas width and height
+     * @param CanvasUpdateRequest $request
+     */
+    public static function canvasUpdate(CanvasUpdateRequest $request): void
+    {
+        Image::setImageWidth($request['canvasWidth']);
+        Image::setImageHeight($request['canvasHeight']);
     }
 }

@@ -47,3 +47,14 @@ Route::get('/savedImages', function () {
     return view('savedImages', ['images' => DB::table('images')->latest()->get()]);
 });
 
+Route::match(
+    ['get', 'post'],
+    '/userImage/{imageId}',
+    [ImageController::class, 'openUserImage']
+)->name('openUserImage');
+
+Route::match(
+    ['get', 'post'],
+    '/uploadImage',
+    [ImageController::class, 'uploadImage']
+)->name('uploadImage');

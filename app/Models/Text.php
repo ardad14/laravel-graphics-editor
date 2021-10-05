@@ -31,9 +31,9 @@ class Text extends Figure
         $fontStyle = dirname(__FILE__) . '/Roboto-Regular.ttf';
 
         imagettftext($image, $this->fontSize, 0, $this->point->getX(), $this->point->getY(), $color, $fontStyle, $this->text);
-        imagepng($image, '/var/www/public/figures/temp_image.png');
+        imagepng($image, '/var/www/public/images/temp_image.png');
 
-        chmod('/var/www/public/figures/temp_image.png', octdec("0777"));
+        chmod('/var/www/public/images/temp_image.png', octdec("0777"));
         session()->push('figure', 'text' . $index);
         header("location: /");
         return array();

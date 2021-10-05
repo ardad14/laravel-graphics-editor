@@ -22,9 +22,9 @@ class Point extends Figure
         $index = $parentResult['index'];
 
         ImageRectAngle($image, $this->getX(), $this->getY(), $this->getX()+2, $this->getY()+2, $color);
-        imagepng($image, '/var/www/public/figures/temp_image.png');
+        imagepng($image, '/var/www/public/images/temp_image.png');
 
-        chmod('/var/www/public/figures/temp_image.png', octdec("0777"));
+        chmod('/var/www/public/images/temp_image.png', octdec("0777"));
         session()->push('figure', 'point' . $index);
         header("location: /");
         return ['image' => $image, 'color' => $color];

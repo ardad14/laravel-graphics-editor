@@ -435,7 +435,7 @@
                                     <h5>Картинка</h5>
                                     <input name="userfile" type="file" >
                                 </label>
-                                <button class="btn btn-primary" type="submit">Загрузить</button>
+                                <button class="btn btn-primary col mt-4" type="submit">Загрузить</button>
                             </form>
                         </div>
                     </div>

@@ -417,6 +417,13 @@
                                     <label for="fileName"><h6>Имя файла</h6></label>
                                     <input type="text" class="form-control" id="fileName" name="fileName" placeholder="Файл">
                                 </div>
+                                <div class="form-group">
+                                    <label for="imageExtension">Формат</label>
+                                    <select class="form-select" aria-label="imageExtension" name="imageExtension">
+                                        <option value="png" selected>png</option>
+                                        <option value="jpeg">jpeg</option>
+                                    </select>
+                                </div>
                                 <button class="btn btn-primary" type="submit">Сохранить</button>
                             </form>
                         </div>

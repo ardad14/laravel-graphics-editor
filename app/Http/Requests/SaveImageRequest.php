@@ -25,7 +25,8 @@ class SaveImageRequest extends FormRequest
     {
         return [
             'username' => array('required', 'regex:/[A-Za-z]/u'),
-            'fileName' => array('required', 'regex:/[A-Za-z]/u')
+            'fileName' => array('required', 'regex:/[A-Za-z]/u'),
+            'imageExtension' => 'required',
         ];
     }
 }

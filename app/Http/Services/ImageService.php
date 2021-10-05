@@ -6,94 +6,94 @@ use App\Http\Factories\FigureFactory;
 
 class ImageService
 {
-    public static function drawFigure($requset)
+    public static function drawFigure($request)
     {
-        switch ($requset['type']) {
+        switch ($request['type']) {
             case "point":
-                $point = FigureFactory::makePoint($requset['pointXCoord'], $requset['pointYCoord']);
-                $point->draw($requset['pointColor']);
+                $point = FigureFactory::makePoint($request['pointXCoord'], $request['pointYCoord']);
+                $point->draw($request['pointColor']);
                 break;
 
             case "section":
                 $section = FigureFactory::makeSection(
-                    $requset['sectionFirstXCoord'],
-                    $requset['sectionFirstYCoord'],
-                    $requset['sectionSecondXCoord'],
-                    $requset['sectionSecondYCoord']
+                    $request['sectionFirstXCoord'],
+                    $request['sectionFirstYCoord'],
+                    $request['sectionSecondXCoord'],
+                    $request['sectionSecondYCoord']
                 );
-                $section->draw($requset["sectionColor"]);
+                $section->draw($request["sectionColor"]);
                 break;
 
             case "square":
                 $square = FigureFactory::makeSquare(
-                    $requset['squareFirstXCoord'],
-                    $requset['squareFirstYCoord'],
-                    $requset['squareLength']
+                    $request['squareFirstXCoord'],
+                    $request['squareFirstYCoord'],
+                    $request['squareLength']
                 );
-                $square->draw($requset["squareColor"]);
+                $square->draw($request["squareColor"]);
                 break;
 
             case "rectangle":
                 $rectangle= FigureFactory::makeRectangle(
-                    $requset['rectangleFirstXCoord'],
-                    $requset['rectangleFirstYCoord'],
-                    $requset['rectangleSecondXCoord'],
-                    $requset['rectangleSecondYCoord']
+                    $request['rectangleFirstXCoord'],
+                    $request['rectangleFirstYCoord'],
+                    $request['rectangleSecondXCoord'],
+                    $request['rectangleSecondYCoord']
                 );
-                $rectangle->draw($requset["rectangleColor"]);
+                $rectangle->draw($request["rectangleColor"]);
                 break;
 
             case "parallelogram":
                 $triangle = FigureFactory::makeParallelogram(
-                    $requset['parallelogramFirstXCoord'],
-                    $requset['parallelogramFirstYCoord'],
-                    $requset['parallelogramSecondXCoord'],
-                    $requset['parallelogramSecondYCoord'],
-                    $requset['parallelogramThirdXCoord'],
-                    $requset['parallelogramThirdYCoord'],
+                    $request['parallelogramFirstXCoord'],
+                    $request['parallelogramFirstYCoord'],
+                    $request['parallelogramSecondXCoord'],
+                    $request['parallelogramSecondYCoord'],
+                    $request['parallelogramThirdXCoord'],
+                    $request['parallelogramThirdYCoord'],
                 );
-                $triangle->draw($requset["parallelogramColor"]);
+                $triangle->draw($request["parallelogramColor"]);
                 break;
 
             case "circle":
                 $circle = FigureFactory::makeCircle(
-                    $requset['circleXCoord'],
-                    $requset['circleYCoord'],
-                    $requset['circleRadius'],
+                    $request['circleXCoord'],
+                    $request['circleYCoord'],
+                    $request['circleRadius'],
                 );
-                $circle->draw($requset["circleColor"]);
+                $circle->draw($request["circleColor"]);
                 break;
 
             case "ellipse":
                 $ellipse = FigureFactory::makeEllipse(
-                    $requset['ellipseXCoord'],
-                    $requset['ellipseYCoord'],
-                    $requset['ellipseLongRadius'],
-                    $requset['ellipseShortRadius'],
+                    $request['ellipseXCoord'],
+                    $request['ellipseYCoord'],
+                    $request['ellipseLongRadius'],
+                    $request['ellipseShortRadius'],
                 );
-                $ellipse->draw($requset["ellipseColor"]);
+                $ellipse->draw($request["ellipseColor"]);
                 break;
 
             case "triangle":
                 $triangle = FigureFactory::makeTriangle(
-                    $requset['triangleFirstXCoord'],
-                    $requset['triangleFirstYCoord'],
-                    $requset['triangleSecondXCoord'],
-                    $requset['triangleSecondYCoord'],
-                    $requset['triangleThirdXCoord'],
-                    $requset['triangleThirdYCoord'],
+                    $request['triangleFirstXCoord'],
+                    $request['triangleFirstYCoord'],
+                    $request['triangleSecondXCoord'],
+                    $request['triangleSecondYCoord'],
+                    $request['triangleThirdXCoord'],
+                    $request['triangleThirdYCoord'],
                 );
-                $triangle->draw($requset["triangleColor"]);
+                $triangle->draw($request["triangleColor"]);
                 break;
 
             case "text":
                 $text = FigureFactory::makeText(
-                    $requset['textXCoord'],
-                    $requset['textYCoord'],
-                    $requset['textString'],
-                    $requset['textSize'],
+                    $request['textXCoord'],
+                    $request['textYCoord'],
+                    $request['textString'],
+                    $request['textSize'],
                 );
-                $text->draw($requset["textColor"]);
+                $text->draw($request["textColor"]);
                 break;
         }
     }

@@ -58,3 +58,9 @@ Route::match(
     '/uploadImage',
     [ImageController::class, 'uploadImage']
 )->name('uploadImage');
+
+Route::match(
+    ['get', 'post'],
+    '/canvasUpdate',
+    [ImageController::class, 'canvasUpdate']
+)->name('canvasUpdate');

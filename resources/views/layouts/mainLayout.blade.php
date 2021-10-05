@@ -447,6 +447,27 @@
                         </div>
                     </div>
                 </li>
+                <li>
+                    <div class="dropdown show">
+                        <a class="nav-link link-dark dropdown-toggle" href="#" role="button" id="dropdownCanvas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Изменить полотно
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownCanvas">
+                            <form class="px-4 py-3" action="/canvasUpdate">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="canvasWidth"><h6>Ширина</h6></label>
+                                    <input type="number" class="form-control" id="canvasWidth" name="canvasWidth">
+                                </div>
+                                <div class="form-group">
+                                    <label for="canvasHeight"><h6>Длина</h6></label>
+                                    <input type="number" class="form-control" id="canvasHeight" name="canvasHeight">
+                                </div>
+                                <button class="btn btn-primary col mt-4" type="submit">Установить</button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </header>
     </div>

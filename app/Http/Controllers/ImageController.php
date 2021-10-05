@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CanvasUpdateRequest;
 use App\Http\Requests\SaveImageRequest;
 use App\Http\Services\FileService;
 use App\Http\Services\ImageService;
@@ -60,5 +61,15 @@ class ImageController extends Controller
     public function openUserImage($userId): void
     {
         FileService::openUserImage($userId);
+    }
+
+    /**
+     * Change canvas height and width
+     * @param CanvasUpdateRequest $request
+     */
+    public function canvasUpdate(CanvasUpdateRequest $request): void
+    {
+        FileService::clearCanvas();
+        ImageService::canvasUpdate($request);
     }
 }
